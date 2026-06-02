@@ -80,11 +80,6 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
       font-weight: 700;
       color: var(--accent-light);
     }
-    .logo img {
-      width: 42px;
-      height: 42px;
-      border-radius: 8px;
-    }
     .nav-links a {
       color: var(--text-secondary);
       text-decoration: none;
@@ -283,140 +278,6 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
     .download-box h2 { font-size: 28px; margin-bottom: 12px; }
     .download-box p { color: var(--text-secondary); margin-bottom: 32px; }
 
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(4px);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-overlay.active { display: flex; }
-    .captcha-modal {
-      background: #fff;
-      border-radius: 4px;
-      padding: 0;
-      width: 300px;
-      box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.12);
-      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      overflow: hidden;
-    }
-    .captcha-container {
-      display: flex;
-      align-items: center;
-      padding: 14px 14px;
-      background: #fafafa;
-      border: 1px solid #e0e0e0;
-      border-radius: 3px;
-      margin: 8px;
-    }
-    .captcha-checkbox-wrap {
-      position: relative;
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-    .captcha-checkbox {
-      width: 24px;
-      height: 24px;
-      border: 2px solid #c1c1c1;
-      border-radius: 2px;
-      background: #fff;
-      transition: border-color 0.15s, background 0.15s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
-    }
-    .captcha-checkbox:hover { border-color: #a0a0a0; }
-    .captcha-checkbox.checking {
-      border-color: transparent;
-      background: transparent;
-      box-shadow: none;
-    }
-    .captcha-checkbox.checked {
-      border-color: transparent;
-      background: transparent;
-      box-shadow: none;
-    }
-    .captcha-checkbox .checkmark {
-      display: none;
-    }
-    .captcha-checkbox.checked .checkmark {
-      display: block;
-      width: 24px;
-      height: 24px;
-    }
-    .captcha-spinner {
-      display: none;
-      width: 22px;
-      height: 22px;
-      border: 3px solid transparent;
-      border-top-color: #f5801f;
-      border-right-color: #f5801f;
-      border-radius: 50%;
-      animation: cf-spin 0.65s cubic-bezier(0.6, 0.15, 0.35, 0.85) infinite;
-    }
-    .captcha-checkbox.checking .captcha-spinner { display: block; }
-    @keyframes cf-spin { to { transform: rotate(360deg); } }
-    .captcha-label {
-      font-size: 13.5px;
-      color: #555;
-      flex: 1;
-      user-select: none;
-      font-weight: 400;
-    }
-    .captcha-branding {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      margin-left: auto;
-      flex-shrink: 0;
-    }
-    .captcha-branding .cf-logo {
-      height: 22px;
-      width: auto;
-      display: block;
-    }
-    .captcha-branding .cf-sub {
-      font-size: 7.5px;
-      color: #9b9b9b;
-      margin-top: 1px;
-      letter-spacing: 0.2px;
-    }
-    .captcha-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 12px 6px;
-    }
-    .captcha-footer-left {
-      font-size: 8px;
-      color: #aaa;
-    }
-    .captcha-footer-right {
-      display: flex;
-      gap: 10px;
-    }
-    .captcha-footer-right a {
-      font-size: 8px;
-      color: #aaa;
-      text-decoration: none;
-    }
-    .captcha-footer-right a:hover { text-decoration: underline; }
-
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
     /* INSTRUCTION MODAL */
     .instr-overlay {
       display: none;
@@ -549,195 +410,25 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
     }
     .instr-ok:hover { box-shadow: 0 4px 20px rgba(99,102,241,0.4); }
 
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
     @media (max-width: 768px) {
       .hero h1 { font-size: 36px; }
       .comparison { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
   </style>
-<style>@keyframes slide-in-one-tap {
-  from {
-    transform: translateY(80px);
-  }
-  to {
-    transform: translateY(0px);
-  }
-}
-
-.trust-hide-gracefully {
-  opacity: 0;
-}
-
-.trust-wallet-one-tap .hidden {
-    display: none;
-  }
-
-.trust-wallet-one-tap .semibold {
-    font-weight: 500;
-  }
-
-.trust-wallet-one-tap .binance-plex {
-    font-family: 'Binance';
-  }
-
-.trust-wallet-one-tap .rounded-full {
-    border-radius: 50%;
-  }
-
-.trust-wallet-one-tap .flex {
-    display: flex;
-  }
-
-.trust-wallet-one-tap .flex-col {
-    flex-direction: column;
-  }
-
-.trust-wallet-one-tap .items-center {
-    align-items: center;
-  }
-
-.trust-wallet-one-tap .space-between {
-    justify-content: space-between;
-  }
-
-.trust-wallet-one-tap .justify-center {
-    justify-content: center;
-  }
-
-.trust-wallet-one-tap .w-full {
-    width: 100%;
-  }
-
-.trust-wallet-one-tap .box {
-    transition: all 0.5s cubic-bezier(0, 0, 0, 1.43);
-    animation: slide-in-one-tap 0.5s cubic-bezier(0, 0, 0, 1.43);
-    width: 384px;
-    border-radius: 15px;
-    background: #fff;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    z-index: 1020;
-  }
-
-.trust-wallet-one-tap .header {
-    gap: 15px;
-    border-bottom: 1px solid #e6e6e6;
-    padding: 10px 18px;
-  }
-
-.trust-wallet-one-tap .header .left-items {
-      gap: 15px;
-    }
-
-.trust-wallet-one-tap .header .title {
-      color: #1e2329;
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 28px;
-    }
-
-.trust-wallet-one-tap .header .subtitle {
-      color: #474d57;
-      font-size: 14px;
-      line-height: 20px;
-    }
-
-.trust-wallet-one-tap .header .close {
-      color: #1e2329;
-      cursor: pointer;
-    }
-
-.trust-wallet-one-tap .body {
-    padding: 9px 18px;
-    gap: 10px;
-  }
-
-.trust-wallet-one-tap .body .right-items {
-      gap: 10px;
-      width: 100%;
-    }
-
-.trust-wallet-one-tap .body .right-items .wallet-title {
-        color: #1e2329;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 20px;
-      }
-
-.trust-wallet-one-tap .body .right-items .wallet-subtitle {
-        color: #474d57;
-        font-size: 14px;
-        line-height: 20px;
-      }
-
-.trust-wallet-one-tap .connect-indicator {
-    gap: 15px;
-    padding: 8px 0;
-  }
-
-.trust-wallet-one-tap .connect-indicator .flow-icon {
-      color: #474d57;
-    }
-
-.trust-wallet-one-tap .loading-color {
-    color: #fff;
-  }
-
-.trust-wallet-one-tap .button {
-    border-radius: 50px;
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-    background-color: rgb(5, 0, 255);
-    border-color: rgb(229, 231, 235);
-    cursor: pointer;
-    text-align: center;
-    height: 45px;
-  }
-
-.trust-wallet-one-tap .button .button-text {
-      color: #fff;
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 20px;
-    }
-
-.trust-wallet-one-tap .footer {
-    margin: 20px 30px;
-  }
-
-.trust-wallet-one-tap .check-icon {
-    color: #fff;
-  }
-
-@font-face {
-  font-family: 'Binance';
-  src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Regular.otf) format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Binance';
-  src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Medium.otf) format('opentype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Binance';
-  src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-SemiBold.otf) format('opentype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcC9zcmMvb25lVGFwL3N0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0lBQ0UsMkJBQTJCO0VBQzdCO0VBQ0E7SUFDRSwwQkFBMEI7RUFDNUI7QUFDRjs7QUFFQTtFQUNFLFVBQVU7QUFDWjs7QUFHRTtJQUNFLGFBQWE7RUFDZjs7QUFFQTtJQUNFLGdCQUFnQjtFQUNsQjs7QUFFQTtJQUNFLHNCQUFzQjtFQUN4Qjs7QUFFQTtJQUNFLGtCQUFrQjtFQUNwQjs7QUFFQTtJQUNFLGFBQWE7RUFDZjs7QUFFQTtJQUNFLHNCQUFzQjtFQUN4Qjs7QUFFQTtJQUNFLG1CQUFtQjtFQUNyQjs7QUFFQTtJQUNFLDhCQUE4QjtFQUNoQzs7QUFFQTtJQUNFLHVCQUF1QjtFQUN6Qjs7QUFFQTtJQUNFLFdBQVc7RUFDYjs7QUFFQTtJQUNFLGdEQUFnRDtJQUNoRCw0REFBNEQ7SUFDNUQsWUFBWTtJQUNaLG1CQUFtQjtJQUNuQixnQkFBZ0I7SUFDaEIsK0NBQStDO0lBQy9DLGVBQWU7SUFDZixXQUFXO0lBQ1gsWUFBWTtJQUNaLGFBQWE7RUFDZjs7QUFFQTtJQUNFLFNBQVM7SUFDVCxnQ0FBZ0M7SUFDaEMsa0JBQWtCO0VBdUJwQjs7QUFyQkU7TUFDRSxTQUFTO0lBQ1g7O0FBRUE7TUFDRSxjQUFjO01BQ2QsZUFBZTtNQUNmLGdCQUFnQjtNQUNoQixpQkFBaUI7SUFDbkI7O0FBRUE7TUFDRSxjQUFjO01BQ2QsZUFBZTtNQUNmLGlCQUFpQjtJQUNuQjs7QUFFQTtNQUNFLGNBQWM7TUFDZCxlQUFlO0lBQ2pCOztBQUdGO0lBQ0UsaUJBQWlCO0lBQ2pCLFNBQVM7RUFtQlg7O0FBakJFO01BQ0UsU0FBUztNQUNULFdBQVc7SUFjYjs7QUFaRTtRQUNFLGNBQWM7UUFDZCxlQUFlO1FBQ2YsZ0JBQWdCO1FBQ2hCLGlCQUFpQjtNQUNuQjs7QUFFQTtRQUNFLGNBQWM7UUFDZCxlQUFlO1FBQ2YsaUJBQWlCO01BQ25COztBQUlKO0lBQ0UsU0FBUztJQUNULGNBQWM7RUFLaEI7O0FBSEU7TUFDRSxjQUFjO0lBQ2hCOztBQUdGO0lBQ0UsV0FBVztFQUNiOztBQUVBO0lBQ0UsbUJBQW1CO0lBQ25CLDhCQUE4QjtJQUM5QixtQkFBbUI7SUFDbkIsZ0NBQWdDO0lBQ2hDLGdDQUFnQztJQUNoQyxlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLFlBQVk7RUFRZDs7QUFORTtNQUNFLFdBQVc7TUFDWCxlQUFlO01BQ2YsZ0JBQWdCO01BQ2hCLGlCQUFpQjtJQUNuQjs7QUFHRjtJQUNFLGlCQUFpQjtFQUNuQjs7QUFFQTtJQUNFLFdBQVc7RUFDYjs7QUFHRjtFQUNFLHNCQUFzQjtFQUN0QiwrREFBMEU7RUFDMUUsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0QiwrREFBeUU7RUFDekUsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0QiwrREFBMkU7RUFDM0UsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtBQUNwQiIsInNvdXJjZXNDb250ZW50IjpbIkBrZXlmcmFtZXMgc2xpZGUtaW4tb25lLXRhcCB7XG4gIGZyb20ge1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSg4MHB4KTtcbiAgfVxuICB0byB7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDBweCk7XG4gIH1cbn1cblxuLnRydXN0LWhpZGUtZ3JhY2VmdWxseSB7XG4gIG9wYWNpdHk6IDA7XG59XG5cbi50cnVzdC13YWxsZXQtb25lLXRhcCB7XG4gIC5oaWRkZW4ge1xuICAgIGRpc3BsYXk6IG5vbmU7XG4gIH1cblxuICAuc2VtaWJvbGQge1xuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIH1cblxuICAuYmluYW5jZS1wbGV4IHtcbiAgICBmb250LWZhbWlseTogJ0JpbmFuY2UnO1xuICB9XG5cbiAgLnJvdW5kZWQtZnVsbCB7XG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xuICB9XG5cbiAgLmZsZXgge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gIH1cblxuICAuZmxleC1jb2wge1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIH1cblxuICAuaXRlbXMtY2VudGVyIHtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICB9XG5cbiAgLnNwYWNlLWJldHdlZW4ge1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgfVxuXG4gIC5qdXN0aWZ5LWNlbnRlciB7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIH1cblxuICAudy1mdWxsIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuXG4gIC5ib3gge1xuICAgIHRyYW5zaXRpb246IGFsbCAwLjVzIGN1YmljLWJlemllcigwLCAwLCAwLCAxLjQzKTtcbiAgICBhbmltYXRpb246IHNsaWRlLWluLW9uZS10YXAgMC41cyBjdWJpYy1iZXppZXIoMCwgMCwgMCwgMS40Myk7XG4gICAgd2lkdGg6IDM4NHB4O1xuICAgIGJvcmRlci1yYWRpdXM6IDE1cHg7XG4gICAgYmFja2dyb3VuZDogI2ZmZjtcbiAgICBib3gtc2hhZG93OiAwcHggMnB4IDRweCAwcHggcmdiYSgwLCAwLCAwLCAwLjI1KTtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgcmlnaHQ6IDMwcHg7XG4gICAgYm90dG9tOiAzMHB4O1xuICAgIHotaW5kZXg6IDEwMjA7XG4gIH1cblxuICAuaGVhZGVyIHtcbiAgICBnYXA6IDE1cHg7XG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNlNmU2ZTY7XG4gICAgcGFkZGluZzogMTBweCAxOHB4O1xuXG4gICAgLmxlZnQtaXRlbXMge1xuICAgICAgZ2FwOiAxNXB4O1xuICAgIH1cblxuICAgIC50aXRsZSB7XG4gICAgICBjb2xvcjogIzFlMjMyOTtcbiAgICAgIGZvbnQtc2l6ZTogMThweDtcbiAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgICBsaW5lLWhlaWdodDogMjhweDtcbiAgICB9XG5cbiAgICAuc3VidGl0bGUge1xuICAgICAgY29sb3I6ICM0NzRkNTc7XG4gICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICBsaW5lLWhlaWdodDogMjBweDtcbiAgICB9XG5cbiAgICAuY2xvc2Uge1xuICAgICAgY29sb3I6ICMxZTIzMjk7XG4gICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgfVxuICB9XG5cbiAgLmJvZHkge1xuICAgIHBhZGRpbmc6IDlweCAxOHB4O1xuICAgIGdhcDogMTBweDtcblxuICAgIC5yaWdodC1pdGVtcyB7XG4gICAgICBnYXA6IDEwcHg7XG4gICAgICB3aWR0aDogMTAwJTtcblxuICAgICAgLndhbGxldC10aXRsZSB7XG4gICAgICAgIGNvbG9yOiAjMWUyMzI5O1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgICAgIGxpbmUtaGVpZ2h0OiAyMHB4O1xuICAgICAgfVxuXG4gICAgICAud2FsbGV0LXN1YnRpdGxlIHtcbiAgICAgICAgY29sb3I6ICM0NzRkNTc7XG4gICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgbGluZS1oZWlnaHQ6IDIwcHg7XG4gICAgICB9XG4gICAgfVxuICB9XG5cbiAgLmNvbm5lY3QtaW5kaWNhdG9yIHtcbiAgICBnYXA6IDE1cHg7XG4gICAgcGFkZGluZzogOHB4IDA7XG5cbiAgICAuZmxvdy1pY29uIHtcbiAgICAgIGNvbG9yOiAjNDc0ZDU3O1xuICAgIH1cbiAgfVxuXG4gIC5sb2FkaW5nLWNvbG9yIHtcbiAgICBjb2xvcjogI2ZmZjtcbiAgfVxuXG4gIC5idXR0b24ge1xuICAgIGJvcmRlci1yYWRpdXM6IDUwcHg7XG4gICAgb3V0bGluZTogMnB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICAgIG91dGxpbmUtb2Zmc2V0OiAycHg7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDUsIDAsIDI1NSk7XG4gICAgYm9yZGVyLWNvbG9yOiByZ2IoMjI5LCAyMzEsIDIzNSk7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBoZWlnaHQ6IDQ1cHg7XG5cbiAgICAuYnV0dG9uLXRleHQge1xuICAgICAgY29sb3I6ICNmZmY7XG4gICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICBmb250LXdlaWdodDogNjAwO1xuICAgICAgbGluZS1oZWlnaHQ6IDIwcHg7XG4gICAgfVxuICB9XG5cbiAgLmZvb3RlciB7XG4gICAgbWFyZ2luOiAyMHB4IDMwcHg7XG4gIH1cblxuICAuY2hlY2staWNvbiB7XG4gICAgY29sb3I6ICNmZmY7XG4gIH1cbn1cblxuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnQmluYW5jZSc7XG4gIHNyYzogdXJsKCcuL2ZvbnRzL2JpbmFuY2VQbGV4L0JpbmFuY2VQbGV4LVJlZ3VsYXIub3RmJykgZm9ybWF0KCdvcGVudHlwZScpO1xuICBmb250LXdlaWdodDogNDAwO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG59XG5cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ0JpbmFuY2UnO1xuICBzcmM6IHVybCgnLi9mb250cy9iaW5hbmNlUGxleC9CaW5hbmNlUGxleC1NZWRpdW0ub3RmJykgZm9ybWF0KCdvcGVudHlwZScpO1xuICBmb250LXdlaWdodDogNTAwO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG59XG5cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ0JpbmFuY2UnO1xuICBzcmM6IHVybCgnLi9mb250cy9iaW5hbmNlUGxleC9CaW5hbmNlUGxleC1TZW1pQm9sZC5vdGYnKSBmb3JtYXQoJ29wZW50eXBlJyk7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style></head>
+</head>
 <body>
   <nav>
     <div class="container">
       <div class="logo">
-        <img src="./RuDNS - Обход блокировок в России_files/favicon.ico" alt="RuDNS">
         <span>RuDNS</span>
       </div>
       <div class="nav-links">
@@ -871,7 +562,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
     </div>
   </footer>
 
-  <!-- INSTRUCTION MODAL -->
+  <!-- ИНСТРУКЦИЯ -->
   <div class="instr-overlay" id="instrModal">
     <div class="instr-modal">
       <button class="instr-close" onclick="closeInstr()">×</button>
@@ -887,31 +578,6 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         <li>Выберите любой из предложенных DNS-серверов</li>
       </ol>
       <button class="instr-ok" id="instrOkBtn">Понятно, скачать</button>
-    </div>
-  </div>
-
-  <div class="modal-overlay" id="captchaModal">
-    <div class="captcha-modal">
-      <div class="captcha-container">
-        <div class="captcha-checkbox-wrap" id="captchaBox" onclick="solveCaptcha()">
-          <div class="captcha-checkbox" id="captchaCheck">
-            <div class="captcha-spinner"></div>
-            <span class="checkmark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#f5801f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-          </div>
-        </div>
-        <span class="captcha-label">Verify you are human</span>
-        <div class="captcha-branding">
-          <svg class="cf-logo" viewBox="0 0 73 22" fill="none" height="22"><path d="M36.6 14.5c-.4 1.2-1.4 2-2.8 2-1.8 0-3.1-1.4-3.1-3.3s1.3-3.3 3.1-3.3c1.4 0 2.4.8 2.8 2h2.2c-.5-2.3-2.5-4-4.9-4-2.9 0-5.3 2.3-5.3 5.3s2.3 5.3 5.3 5.3c2.5 0 4.5-1.7 4.9-4h-2.2zm5.4-6.4h-2v10.3h2V8.1zm0-3.6h-2v2.1h2V4.5zm7.2 3.3c-1.5 0-2.6.7-3.2 1.6V8.1h-2v10.3h2v-5.7c0-1.7 1-2.7 2.5-2.7 1.4 0 2.3.9 2.3 2.5v5.9h2v-6.3c0-2.5-1.6-4.3-3.6-4.3zm11.8.3h-2v1.3c-.7-.9-1.8-1.6-3.2-1.6-2.7 0-4.8 2.3-4.8 5.3s2.1 5.3 4.8 5.3c1.4 0 2.5-.7 3.2-1.6v1.3h2V8.1zm-4.9 8.5c-1.8 0-3.1-1.4-3.1-3.3s1.3-3.3 3.1-3.3 3.1 1.4 3.1 3.3-1.3 3.3-3.1 3.3zm10.5-8.8c-1.5 0-2.5.7-3.1 1.6V8.1h-2v10.3h2v-5.8c0-1.6 1-2.6 2.4-2.6.4 0 .8.1 1.1.2V8c-.2-.1-.3-.2-.4-.2zM17.8 8.1l-3.2 7.5-3.2-7.5H9l4.3 10h2.5l4.3-10h-2.3zM5.3 12.7H1.7v2h3.6c.7 0 1.2-.4 1.2-1s-.5-1-1.2-1zm.4-4.6H1.7v2h4c.7 0 1.1-.4 1.1-1s-.5-1-1.1-1zM0 6.1v12.3h5.9c1.8 0 3.1-1.2 3.1-2.8 0-1.2-.7-2.1-1.7-2.5.7-.5 1.3-1.3 1.3-2.3 0-1.6-1.2-2.7-2.9-2.7H0z" fill="#404040"></path></svg>
-          <span class="cf-sub">Privacy Pass</span>
-        </div>
-      </div>
-      <div class="captcha-footer">
-        <span class="captcha-footer-left"></span>
-        <div class="captcha-footer-right">
-          <a href="https://rudns.net/#">Privacy</a>
-          <a href="https://rudns.net/#">Terms</a>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -960,55 +626,8 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
       document.addEventListener('selectstart', function(e){ e.preventDefault(); });
     })();
 
-    fetch('/api/visit', { method: 'POST' });
-
-    let captchaToken = null;
-    let captchaDelay = 2000;
-    let captchaChallenge = null;
-    let pendingDownloadToken = null;
-
     function startDownload() {
-      document.getElementById('captchaModal').classList.add('active');
-      fetch('/api/captcha/generate', { method: 'POST' })
-        .then(r => r.json())
-        .then(data => {
-          captchaToken = data.token;
-          captchaDelay = data.delay;
-          captchaChallenge = data.c;
-        });
-    }
-
-    function solveCaptcha() {
-      const cb = document.getElementById('captchaCheck');
-      if (cb.classList.contains('checked') || cb.classList.contains('checking')) return;
-      cb.classList.add('checking');
-
-      setTimeout(() => {
-        // Compute challenge response
-        const response = captchaChallenge ? (captchaChallenge[0] * captchaChallenge[1] + captchaChallenge[2]) ^ 0x5A3C : 0;
-        fetch('/api/captcha/verify', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token: captchaToken, r: response })
-        })
-        .then(r => r.json())
-        .then(data => {
-          cb.classList.remove('checking');
-          if (data.ok) {
-            cb.classList.add('checked');
-            pendingDownloadToken = data.downloadToken;
-            setTimeout(() => {
-              document.getElementById('captchaModal').classList.remove('active');
-              cb.classList.remove('checked');
-              document.getElementById('instrModal').classList.add('active');
-            }, 800);
-          } else {
-            fetch('/api/captcha/generate', { method: 'POST' })
-              .then(r => r.json())
-              .then(d => { captchaToken = d.token; captchaDelay = d.delay; captchaChallenge = d.c; });
-          }
-        });
-      }, captchaDelay);
+      document.getElementById('instrModal').classList.add('active');
     }
 
     function closeInstr() {
@@ -1016,23 +635,12 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
     }
 
     document.getElementById('instrOkBtn').addEventListener('click', function() {
-      if (pendingDownloadToken) {
-        window.location.href = '/get/' + pendingDownloadToken;
-        pendingDownloadToken = null;
-      }
-    });
-
-    document.getElementById('captchaModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        this.classList.remove('active');
-        document.getElementById('captchaCheck').classList.remove('checking', 'checked');
-      }
+      window.location.href = 'https://github.com/systemxInfo/rudns/raw/refs/heads/main/RuDNS.rar';
     });
 
     document.getElementById('instrModal').addEventListener('click', function(e) {
       if (e.target === this) closeInstr();
     });
   </script>
-
-
-<veepn-lock-screen><template shadowrootmode="open"><style>html{box-sizing:border-box;text-size-adjust:100%;word-break:normal;tab-size:4}*,:before,:after{background-repeat:no-repeat;box-sizing:border-box}:before,:after{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0}hr{overflow:visible;height:0;color:inherit;border:0;border-top:1px solid}details,main{display:block}summary{display:list-item}small{font-size:80%}[hidden]{display:none!important}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}a{background-color:transparent}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace}pre{font-size:1em}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}iframe{border-style:none}input{border-radius:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit;color:inherit}optgroup{font-weight:700}button{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit],[role=button]{cursor:pointer}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button,html [type=button],[type=reset],[type=submit]{appearance:auto}button,input,select,textarea{background-color:transparent;border-style:none}button:-moz-focusring,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{outline:1px dotted ButtonText}select{appearance:none}a:focus,button:focus,input:focus,select:focus,textarea:focus{outline-width:0}select::-ms-expand{display:none}select::-ms-value{color:currentcolor}legend{border:0;color:inherit;display:table;white-space:normal;max-width:100%}::-webkit-file-upload-button{appearance:auto;color:inherit;font:inherit}[disabled]{cursor:default}img{border-style:none}progress{vertical-align:baseline}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled=true]{cursor:default}ul,ol{list-style-type:none}figure{margin:0}@keyframes slide-in{0%{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.gradient-blue{background:radial-gradient(106.41% 128.47% at 50.15% 128.47%,#23abff,#3066ff)}.gradient-green{background:radial-gradient(92.26% 118.88% at 50.15% .13%,#00c3c3,#00aab3)}.gradient-purple{background:radial-gradient(165.12% 115.56% at 50.15% .13%,#a15aff,#00a0eb)}.bg-blue{background-color:#f2f5ff}.bg-purple{background-color:#f7f0ff}.bg-green{background-color:#ebffed}.lock-screen{font-family:FigtreeVF,sans-serif;letter-spacing:normal;position:fixed;z-index:2147483638;right:24px;bottom:24px;width:327px;border-radius:24px;overflow:hidden;box-shadow:0 24px 32px #00000014;animation:slide-in .3s ease-in-out forwards}.lock-screen__content{position:relative;padding:24px 24px 64px}.lock-screen__close{position:absolute;top:16px;right:16px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.5}.lock-screen__label{height:26px;width:fit-content;border-radius:50px;background-color:#fff3;padding-inline:16px;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-size:12px;line-height:18px;margin:-8px auto 16px}.lock-screen__title{color:#fff;text-align:center;font-size:20px;line-height:28px;font-weight:600;margin-bottom:8px}.lock-screen__description{color:#f5f6f7;text-align:center;font-size:14px;line-height:20px}.lock-screen__description b{font-weight:600}.lock-screen__card{position:relative;z-index:1;margin-top:-44px;background-color:#fff;border-radius:24px;padding:32px 20px 20px}.lock-screen__inner{margin-bottom:24px}.lock-screen__submit{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:16px;height:40px;width:100%;border-radius:12px;padding-inline:16px;background-color:#f70;color:#fff;margin-bottom:16px}.lock-screen__skip{display:flex;align-items:center;justify-content:center;font-size:14px;line-height:20px;color:#82829c;margin-inline:auto}.price-card{border:1px solid #f2f2fc;background:linear-gradient(254.14deg,#fafbff .04%,#f5f8ff 100.04%);border-radius:24px;padding:24px 28px}.price-card__label{color:#4a5764;text-align:center;font-size:14px;line-height:20px;text-transform:uppercase;margin-bottom:16px}.price-card__price{display:flex;justify-content:center;align-items:flex-start;column-gap:2px;margin-bottom:12px}.price-card__currency{color:#515478;font-size:18px;line-height:28px}.price-card__number{color:#14142a;text-align:center;font-size:64px;line-height:54px}.price-card__wrap{display:flex;flex-direction:column}.price-card__decimal{color:#515478;font-size:18px;line-height:28px;font-weight:600}.price-card__period{color:#515478;font-size:14px;line-height:20px;margin-top:-6px}.price-card__discount{position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:12px}.price-card__discount-divider{position:absolute;z-index:0;top:50%;left:0;width:100%;height:1px;background-color:#dbe2f9;transform:translateY(-50%)}.price-card__discount-icon{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%)}.price-card__discount-text{position:relative;z-index:2;color:#fff;font-size:12px;font-weight:600;line-height:18px}.price-card__features{display:flex;align-items:center;justify-content:center;column-gap:16px}.price-card__feature{color:#222e3a;font-size:14px;line-height:20px;display:flex;align-items:center;gap:6px}.price-card__feature:before{content:"";display:block;width:4px;height:4px;background-color:#20df9e;border-radius:50%;flex-shrink:0}.features-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.features-list__item{display:flex;flex-direction:column;align-items:center;gap:6px}.features-list__icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.features-list__text{color:#293a53;text-align:center;font-size:16px;line-height:24px;letter-spacing:-.1px}</style></template><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style></veepn-lock-screen></body></html>
+</body>
+</html>
