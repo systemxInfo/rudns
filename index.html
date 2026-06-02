@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<!-- saved from url=(0018)https://rudns.net/ -->
+<html lang="ru"><div id="in-page-channel-node-id" data-channel-name="in_page_channel_1m4Uqd"></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RuDNS - Обход блокировок в России</title>
+  <link rel="icon" href="./RuDNS - Обход блокировок в России_files/favicon.ico">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #0f0f1a;
+      --bg-card: rgba(15, 15, 25, 0.6);
+      --bg-card-solid: rgba(20, 20, 35, 0.8);
+      --accent: #6366f1;
+      --accent-light: #a5b4fc;
+      --accent-lighter: #c7d2fe;
+      --accent-dark: #4f46e5;
+      --text-primary: #e0e0e8;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      --border: rgba(99, 102, 241, 0.1);
+      --border-hover: rgba(99, 102, 241, 0.25);
+      --success: #22C55E;
+      --danger: #ef4444;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(160deg, #0a0a0f 0%, #0f0f1a 40%, #0a0a0f 100%);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at 50% 30%, rgba(99, 102, 241, 0.05) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent-light);
+    }
+    .logo img {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent-light); }
+
+    .hero {
+      padding: 160px 0 100px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--border-hover);
+      background: rgba(99, 102, 241, 0.08);
+      color: var(--accent-light);
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(99, 102, 241, 0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(99, 102, 241, 0.4);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-hover);
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      margin-left: 12px;
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent-light);
+    }
+
+    section { padding: 80px 0; }
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 16px;
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+    }
+    .feature-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(99, 102, 241, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .feature-card h3 { font-size: 18px; margin-bottom: 8px; color: var(--text-primary); }
+    .feature-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .comparison-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .comparison-card.before { border-color: rgba(239, 68, 68, 0.2); }
+    .comparison-card.after { border-color: rgba(34, 197, 94, 0.2); }
+    .comparison-card h3 { font-size: 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .comparison-card.before h3 { color: #f87171; }
+    .comparison-card.after h3 { color: #4ade80; }
+    .comparison-card ul { list-style: none; padding: 0; }
+    .comparison-card li {
+      padding: 8px 0;
+      color: var(--text-secondary);
+      font-size: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-card li:last-child { border: none; }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .step { display: flex; gap: 20px; align-items: flex-start; }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid var(--border-hover);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent-light);
+      font-size: 14px;
+    }
+    .step-content h4 { font-size: 16px; margin-bottom: 4px; color: var(--text-primary); }
+    .step-content p { color: var(--text-secondary); font-size: 14px; line-height: 1.5; }
+
+    .download-section {
+      text-align: center;
+      padding: 80px 0 120px;
+    }
+    .download-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hover);
+      border-radius: 20px;
+      padding: 48px;
+      max-width: 560px;
+      margin: 0 auto;
+      backdrop-filter: blur(10px);
+    }
+    .download-box h2 { font-size: 28px; margin-bottom: 12px; }
+    .download-box p { color: var(--text-secondary); margin-bottom: 32px; }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .captcha-modal {
+      background: #fff;
+      border-radius: 4px;
+      padding: 0;
+      width: 300px;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.12);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow: hidden;
+    }
+    .captcha-container {
+      display: flex;
+      align-items: center;
+      padding: 14px 14px;
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 3px;
+      margin: 8px;
+    }
+    .captcha-checkbox-wrap {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .captcha-checkbox {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #c1c1c1;
+      border-radius: 2px;
+      background: #fff;
+      transition: border-color 0.15s, background 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .captcha-checkbox:hover { border-color: #a0a0a0; }
+    .captcha-checkbox.checking {
+      border-color: transparent;
+      background: transparent;
+      box-shadow: none;
+    }
+    .captcha-checkbox.checked {
+      border-color: transparent;
+      background: transparent;
+      box-shadow: none;
+    }
+    .captcha-checkbox .checkmark {
+      display: none;
+    }
+    .captcha-checkbox.checked .checkmark {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+    .captcha-spinner {
+      display: none;
+      width: 22px;
+      height: 22px;
+      border: 3px solid transparent;
+      border-top-color: #f5801f;
+      border-right-color: #f5801f;
+      border-radius: 50%;
+      animation: cf-spin 0.65s cubic-bezier(0.6, 0.15, 0.35, 0.85) infinite;
+    }
+    .captcha-checkbox.checking .captcha-spinner { display: block; }
+    @keyframes cf-spin { to { transform: rotate(360deg); } }
+    .captcha-label {
+      font-size: 13.5px;
+      color: #555;
+      flex: 1;
+      user-select: none;
+      font-weight: 400;
+    }
+    .captcha-branding {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .captcha-branding .cf-logo {
+      height: 22px;
+      width: auto;
+      display: block;
+    }
+    .captcha-branding .cf-sub {
+      font-size: 7.5px;
+      color: #9b9b9b;
+      margin-top: 1px;
+      letter-spacing: 0.2px;
+    }
+    .captcha-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 12px 6px;
+    }
+    .captcha-footer-left {
+      font-size: 8px;
+      color: #aaa;
+    }
+    .captcha-footer-right {
+      display: flex;
+      gap: 10px;
+    }
+    .captcha-footer-right a {
+      font-size: 8px;
+      color: #aaa;
+      text-decoration: none;
+    }
+    .captcha-footer-right a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    /* INSTRUCTION MODAL */
+    .instr-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(6px);
+      z-index: 1001;
+      align-items: center;
+      justify-content: center;
+    }
+    .instr-overlay.active { display: flex; }
+    .instr-modal {
+      background: linear-gradient(160deg, #0f0f1a, #0a0a0f);
+      border: 1px solid var(--border-hover);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 480px;
+      width: 90%;
+      position: relative;
+    }
+    .instr-modal h2 {
+      font-size: 22px;
+      color: var(--accent-light);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .instr-password {
+      text-align: center;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid var(--border-hover);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+    .instr-password .label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+    .instr-password .pass {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--accent-lighter);
+      letter-spacing: 0;
+      font-family: 'Consolas', 'Courier New', monospace;
+      user-select: all;
+    }
+    .instr-steps {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      counter-reset: instr;
+    }
+    .instr-steps li {
+      counter-increment: instr;
+      padding: 10px 0 10px 36px;
+      position: relative;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.6;
+      border-bottom: 1px solid var(--border);
+    }
+    .instr-steps li:last-child { border: none; }
+    .instr-steps li::before {
+      content: counter(instr);
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 24px;
+      height: 24px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid var(--border-hover);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-light);
+    }
+    .instr-steps li a {
+      color: var(--accent-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .instr-steps li a:hover { color: var(--accent-lighter); }
+    .instr-steps .pass-inline {
+      display: inline-block;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 8px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-weight: 700;
+      color: var(--accent-light);
+      letter-spacing: 2px;
+      user-select: all;
+    }
+    .instr-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 20px;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .instr-close:hover { background: rgba(99,102,241,0.1); color: var(--text-primary); }
+    .instr-ok {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .instr-ok:hover { box-shadow: 0 4px 20px rgba(99,102,241,0.4); }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 36px; }
+      .comparison { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+<style>@keyframes slide-in-one-tap {
+  from {
+    transform: translateY(80px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.trust-hide-gracefully {
+  opacity: 0;
+}
+
+.trust-wallet-one-tap .hidden {
+    display: none;
+  }
+
+.trust-wallet-one-tap .semibold {
+    font-weight: 500;
+  }
+
+.trust-wallet-one-tap .binance-plex {
+    font-family: 'Binance';
+  }
+
+.trust-wallet-one-tap .rounded-full {
+    border-radius: 50%;
+  }
+
+.trust-wallet-one-tap .flex {
+    display: flex;
+  }
+
+.trust-wallet-one-tap .flex-col {
+    flex-direction: column;
+  }
+
+.trust-wallet-one-tap .items-center {
+    align-items: center;
+  }
+
+.trust-wallet-one-tap .space-between {
+    justify-content: space-between;
+  }
+
+.trust-wallet-one-tap .justify-center {
+    justify-content: center;
+  }
+
+.trust-wallet-one-tap .w-full {
+    width: 100%;
+  }
+
+.trust-wallet-one-tap .box {
+    transition: all 0.5s cubic-bezier(0, 0, 0, 1.43);
+    animation: slide-in-one-tap 0.5s cubic-bezier(0, 0, 0, 1.43);
+    width: 384px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 1020;
+  }
+
+.trust-wallet-one-tap .header {
+    gap: 15px;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 10px 18px;
+  }
+
+.trust-wallet-one-tap .header .left-items {
+      gap: 15px;
+    }
+
+.trust-wallet-one-tap .header .title {
+      color: #1e2329;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+
+.trust-wallet-one-tap .header .subtitle {
+      color: #474d57;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+.trust-wallet-one-tap .header .close {
+      color: #1e2329;
+      cursor: pointer;
+    }
+
+.trust-wallet-one-tap .body {
+    padding: 9px 18px;
+    gap: 10px;
+  }
+
+.trust-wallet-one-tap .body .right-items {
+      gap: 10px;
+      width: 100%;
+    }
+
+.trust-wallet-one-tap .body .right-items .wallet-title {
+        color: #1e2329;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+      }
+
+.trust-wallet-one-tap .body .right-items .wallet-subtitle {
+        color: #474d57;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+.trust-wallet-one-tap .connect-indicator {
+    gap: 15px;
+    padding: 8px 0;
+  }
+
+.trust-wallet-one-tap .connect-indicator .flow-icon {
+      color: #474d57;
+    }
+
+.trust-wallet-one-tap .loading-color {
+    color: #fff;
+  }
+
+.trust-wallet-one-tap .button {
+    border-radius: 50px;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    background-color: rgb(5, 0, 255);
+    border-color: rgb(229, 231, 235);
+    cursor: pointer;
+    text-align: center;
+    height: 45px;
+  }
+
+.trust-wallet-one-tap .button .button-text {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+.trust-wallet-one-tap .footer {
+    margin: 20px 30px;
+  }
+
+.trust-wallet-one-tap .check-icon {
+    color: #fff;
+  }
+
+@font-face {
+  font-family: 'Binance';
+  src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Regular.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Binance';
+  src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-Medium.otf) format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Binance';
+  src: url(chrome-extension://egjidjbpglichdcondbcbdnbeeppgdph/fonts/BinancePlex-SemiBold.otf) format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcC9zcmMvb25lVGFwL3N0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0lBQ0UsMkJBQTJCO0VBQzdCO0VBQ0E7SUFDRSwwQkFBMEI7RUFDNUI7QUFDRjs7QUFFQTtFQUNFLFVBQVU7QUFDWjs7QUFHRTtJQUNFLGFBQWE7RUFDZjs7QUFFQTtJQUNFLGdCQUFnQjtFQUNsQjs7QUFFQTtJQUNFLHNCQUFzQjtFQUN4Qjs7QUFFQTtJQUNFLGtCQUFrQjtFQUNwQjs7QUFFQTtJQUNFLGFBQWE7RUFDZjs7QUFFQTtJQUNFLHNCQUFzQjtFQUN4Qjs7QUFFQTtJQUNFLG1CQUFtQjtFQUNyQjs7QUFFQTtJQUNFLDhCQUE4QjtFQUNoQzs7QUFFQTtJQUNFLHVCQUF1QjtFQUN6Qjs7QUFFQTtJQUNFLFdBQVc7RUFDYjs7QUFFQTtJQUNFLGdEQUFnRDtJQUNoRCw0REFBNEQ7SUFDNUQsWUFBWTtJQUNaLG1CQUFtQjtJQUNuQixnQkFBZ0I7SUFDaEIsK0NBQStDO0lBQy9DLGVBQWU7SUFDZixXQUFXO0lBQ1gsWUFBWTtJQUNaLGFBQWE7RUFDZjs7QUFFQTtJQUNFLFNBQVM7SUFDVCxnQ0FBZ0M7SUFDaEMsa0JBQWtCO0VBdUJwQjs7QUFyQkU7TUFDRSxTQUFTO0lBQ1g7O0FBRUE7TUFDRSxjQUFjO01BQ2QsZUFBZTtNQUNmLGdCQUFnQjtNQUNoQixpQkFBaUI7SUFDbkI7O0FBRUE7TUFDRSxjQUFjO01BQ2QsZUFBZTtNQUNmLGlCQUFpQjtJQUNuQjs7QUFFQTtNQUNFLGNBQWM7TUFDZCxlQUFlO0lBQ2pCOztBQUdGO0lBQ0UsaUJBQWlCO0lBQ2pCLFNBQVM7RUFtQlg7O0FBakJFO01BQ0UsU0FBUztNQUNULFdBQVc7SUFjYjs7QUFaRTtRQUNFLGNBQWM7UUFDZCxlQUFlO1FBQ2YsZ0JBQWdCO1FBQ2hCLGlCQUFpQjtNQUNuQjs7QUFFQTtRQUNFLGNBQWM7UUFDZCxlQUFlO1FBQ2YsaUJBQWlCO01BQ25COztBQUlKO0lBQ0UsU0FBUztJQUNULGNBQWM7RUFLaEI7O0FBSEU7TUFDRSxjQUFjO0lBQ2hCOztBQUdGO0lBQ0UsV0FBVztFQUNiOztBQUVBO0lBQ0UsbUJBQW1CO0lBQ25CLDhCQUE4QjtJQUM5QixtQkFBbUI7SUFDbkIsZ0NBQWdDO0lBQ2hDLGdDQUFnQztJQUNoQyxlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLFlBQVk7RUFRZDs7QUFORTtNQUNFLFdBQVc7TUFDWCxlQUFlO01BQ2YsZ0JBQWdCO01BQ2hCLGlCQUFpQjtJQUNuQjs7QUFHRjtJQUNFLGlCQUFpQjtFQUNuQjs7QUFFQTtJQUNFLFdBQVc7RUFDYjs7QUFHRjtFQUNFLHNCQUFzQjtFQUN0QiwrREFBMEU7RUFDMUUsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0QiwrREFBeUU7RUFDekUsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0QiwrREFBMkU7RUFDM0UsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtBQUNwQiIsInNvdXJjZXNDb250ZW50IjpbIkBrZXlmcmFtZXMgc2xpZGUtaW4tb25lLXRhcCB7XG4gIGZyb20ge1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSg4MHB4KTtcbiAgfVxuICB0byB7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDBweCk7XG4gIH1cbn1cblxuLnRydXN0LWhpZGUtZ3JhY2VmdWxseSB7XG4gIG9wYWNpdHk6IDA7XG59XG5cbi50cnVzdC13YWxsZXQtb25lLXRhcCB7XG4gIC5oaWRkZW4ge1xuICAgIGRpc3BsYXk6IG5vbmU7XG4gIH1cblxuICAuc2VtaWJvbGQge1xuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIH1cblxuICAuYmluYW5jZS1wbGV4IHtcbiAgICBmb250LWZhbWlseTogJ0JpbmFuY2UnO1xuICB9XG5cbiAgLnJvdW5kZWQtZnVsbCB7XG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xuICB9XG5cbiAgLmZsZXgge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gIH1cblxuICAuZmxleC1jb2wge1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIH1cblxuICAuaXRlbXMtY2VudGVyIHtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICB9XG5cbiAgLnNwYWNlLWJldHdlZW4ge1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgfVxuXG4gIC5qdXN0aWZ5LWNlbnRlciB7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIH1cblxuICAudy1mdWxsIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuXG4gIC5ib3gge1xuICAgIHRyYW5zaXRpb246IGFsbCAwLjVzIGN1YmljLWJlemllcigwLCAwLCAwLCAxLjQzKTtcbiAgICBhbmltYXRpb246IHNsaWRlLWluLW9uZS10YXAgMC41cyBjdWJpYy1iZXppZXIoMCwgMCwgMCwgMS40Myk7XG4gICAgd2lkdGg6IDM4NHB4O1xuICAgIGJvcmRlci1yYWRpdXM6IDE1cHg7XG4gICAgYmFja2dyb3VuZDogI2ZmZjtcbiAgICBib3gtc2hhZG93OiAwcHggMnB4IDRweCAwcHggcmdiYSgwLCAwLCAwLCAwLjI1KTtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgcmlnaHQ6IDMwcHg7XG4gICAgYm90dG9tOiAzMHB4O1xuICAgIHotaW5kZXg6IDEwMjA7XG4gIH1cblxuICAuaGVhZGVyIHtcbiAgICBnYXA6IDE1cHg7XG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNlNmU2ZTY7XG4gICAgcGFkZGluZzogMTBweCAxOHB4O1xuXG4gICAgLmxlZnQtaXRlbXMge1xuICAgICAgZ2FwOiAxNXB4O1xuICAgIH1cblxuICAgIC50aXRsZSB7XG4gICAgICBjb2xvcjogIzFlMjMyOTtcbiAgICAgIGZvbnQtc2l6ZTogMThweDtcbiAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgICBsaW5lLWhlaWdodDogMjhweDtcbiAgICB9XG5cbiAgICAuc3VidGl0bGUge1xuICAgICAgY29sb3I6ICM0NzRkNTc7XG4gICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICBsaW5lLWhlaWdodDogMjBweDtcbiAgICB9XG5cbiAgICAuY2xvc2Uge1xuICAgICAgY29sb3I6ICMxZTIzMjk7XG4gICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgfVxuICB9XG5cbiAgLmJvZHkge1xuICAgIHBhZGRpbmc6IDlweCAxOHB4O1xuICAgIGdhcDogMTBweDtcblxuICAgIC5yaWdodC1pdGVtcyB7XG4gICAgICBnYXA6IDEwcHg7XG4gICAgICB3aWR0aDogMTAwJTtcblxuICAgICAgLndhbGxldC10aXRsZSB7XG4gICAgICAgIGNvbG9yOiAjMWUyMzI5O1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgICAgIGxpbmUtaGVpZ2h0OiAyMHB4O1xuICAgICAgfVxuXG4gICAgICAud2FsbGV0LXN1YnRpdGxlIHtcbiAgICAgICAgY29sb3I6ICM0NzRkNTc7XG4gICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgbGluZS1oZWlnaHQ6IDIwcHg7XG4gICAgICB9XG4gICAgfVxuICB9XG5cbiAgLmNvbm5lY3QtaW5kaWNhdG9yIHtcbiAgICBnYXA6IDE1cHg7XG4gICAgcGFkZGluZzogOHB4IDA7XG5cbiAgICAuZmxvdy1pY29uIHtcbiAgICAgIGNvbG9yOiAjNDc0ZDU3O1xuICAgIH1cbiAgfVxuXG4gIC5sb2FkaW5nLWNvbG9yIHtcbiAgICBjb2xvcjogI2ZmZjtcbiAgfVxuXG4gIC5idXR0b24ge1xuICAgIGJvcmRlci1yYWRpdXM6IDUwcHg7XG4gICAgb3V0bGluZTogMnB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICAgIG91dGxpbmUtb2Zmc2V0OiAycHg7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDUsIDAsIDI1NSk7XG4gICAgYm9yZGVyLWNvbG9yOiByZ2IoMjI5LCAyMzEsIDIzNSk7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBoZWlnaHQ6IDQ1cHg7XG5cbiAgICAuYnV0dG9uLXRleHQge1xuICAgICAgY29sb3I6ICNmZmY7XG4gICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICBmb250LXdlaWdodDogNjAwO1xuICAgICAgbGluZS1oZWlnaHQ6IDIwcHg7XG4gICAgfVxuICB9XG5cbiAgLmZvb3RlciB7XG4gICAgbWFyZ2luOiAyMHB4IDMwcHg7XG4gIH1cblxuICAuY2hlY2staWNvbiB7XG4gICAgY29sb3I6ICNmZmY7XG4gIH1cbn1cblxuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnQmluYW5jZSc7XG4gIHNyYzogdXJsKCcuL2ZvbnRzL2JpbmFuY2VQbGV4L0JpbmFuY2VQbGV4LVJlZ3VsYXIub3RmJykgZm9ybWF0KCdvcGVudHlwZScpO1xuICBmb250LXdlaWdodDogNDAwO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG59XG5cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ0JpbmFuY2UnO1xuICBzcmM6IHVybCgnLi9mb250cy9iaW5hbmNlUGxleC9CaW5hbmNlUGxleC1NZWRpdW0ub3RmJykgZm9ybWF0KCdvcGVudHlwZScpO1xuICBmb250LXdlaWdodDogNTAwO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG59XG5cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ0JpbmFuY2UnO1xuICBzcmM6IHVybCgnLi9mb250cy9iaW5hbmNlUGxleC9CaW5hbmNlUGxleC1TZW1pQm9sZC5vdGYnKSBmb3JtYXQoJ29wZW50eXBlJyk7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style></head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">
+        <img src="./RuDNS - Обход блокировок в России_files/favicon.ico" alt="RuDNS">
+        <span>RuDNS</span>
+      </div>
+      <div class="nav-links">
+        <a href="https://rudns.net/#features">Функционал</a>
+        <a href="https://rudns.net/#how">Принцип работы</a>
+        <a href="https://rudns.net/#compare">Сравнение</a>
+        <a href="javascript:void(0)" onclick="startDownload()">Скачать</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section class="hero">
+      <div class="hero-badge">Бесплатный релиз</div>
+      <h1>Свобода начинается там,<br>где заканчиваются ограничения</h1>
+      <p>RuDNS - специализированное решение для обхода DNS-блокировок на территории РФ. Программа обеспечивает доступ к заблокированным ресурсам посредством замены DNS-серверов провайдера на независимые.</p>
+      <button class="btn-primary" onclick="startDownload()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+        Скачать RuDNS
+      </button>
+      <a href="https://rudns.net/#how" class="btn-secondary">Подробнее</a>
+    </section>
+
+    <section id="features">
+      <h2 class="section-title">Функциональные возможности</h2>
+      <p class="section-subtitle">Набор инструментов для восстановления доступа к заблокированным интернет-ресурсам</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><svg width="24" height="24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+          <h3>Моментальное переключение</h3>
+          <p>Смена DNS-серверов происходит моментально. Не требуется ручная настройка.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg width="24" height="24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0110 0v4" stroke-linecap="round"></path></svg></div>
+          <h3>Обход блокировок РКН</h3>
+          <p>Восстановление доступа к ресурсам, заблокированным Роскомнадзором: Telegram, Discord, Roblox и другим сервисам.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg width="24" height="24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" stroke-linecap="round"></path></svg></div>
+          <h3>Устранение замедлений</h3>
+          <p>Независимые DNS-серверы не участвуют в механизмах замедления трафика, маскируясь под РФ сервисы.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg width="24" height="24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4.03 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"></path></svg></div>
+          <h3>База DNS-серверов</h3>
+          <p>Предустановленные конфигурации: Google DNS, Cloudflare, Quad9, OpenDNS и другие проверенные серверы.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg width="24" height="24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+          <h3>Альтернатива VPN</h3>
+          <p>Не требуется приобретение VPN-сервиса или настройка прокси-серверов. Работа на уровне DNS обеспечивает минимальные потери скорости.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg width="24" height="24" fill="none" stroke="var(--accent-light)" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4" stroke-linecap="round"></path></svg></div>
+          <h3>Современный интерфейс</h3>
+          <p>Интуитивно понятное управление с минималистичным дизайном. Программа не требует технических знаний для использования.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2 class="section-title">Принцип работы</h2>
+      <p class="section-subtitle">Процесс настройки занимает менее минуты и не требует специальных знаний</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Загрузка и запуск</h4>
+            <p>Скачайте RuDNS с нашего сайта.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Выбор DNS-сервера</h4>
+            <p>Выберите оптимальный DNS-сервер из предложенного списка.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Активация</h4>
+            <p>Нажмите кнопку запуска. DNS-конфигурация системы будет изменена автоматически. Заблокированные ресурсы станут доступны.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare">
+      <h2 class="section-title">Сравнение</h2>
+      <p class="section-subtitle">Наглядная демонстрация результатов применения RuDNS</p>
+      <div class="comparison">
+        <div class="comparison-card before">
+          <h3>❌ Без RuDNS</h3>
+          <ul>
+            <li>YouTube, Discord, Telegram недоступны</li>
+            <li>Провайдер применяет замедление трафика</li>
+            <li>DNS-запросы фильтруются по реестру РКН</li>
+            <li>Настройка DNS требует ручного вмешательства</li>
+            <li>VPN-сервисы требуют ежемесячной оплаты</li>
+          </ul>
+        </div>
+        <div class="comparison-card after">
+          <h3>✅ С RuDNS</h3>
+          <ul>
+            <li>Полный доступ ко всем заблокированным сервисам</li>
+            <li>Отсутствие искусственных замедлений</li>
+            <li>DNS-запросы обрабатываются независимыми серверами</li>
+            <li>Автоматическая настройка в один клик</li>
+            <li>Полностью бесплатное решение без ограничений</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="download-section">
+      <div class="download-box">
+        <h2>Скачать RuDNS</h2>
+        <p>Совместимость: Windows 10/11. Распространяется бесплатно.</p>
+        <button class="btn-primary" onclick="startDownload()">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+          Скачать бесплатно
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      RuDNS © 2024. Все права защищены.
+    </div>
+  </footer>
+
+  <!-- INSTRUCTION MODAL -->
+  <div class="instr-overlay" id="instrModal">
+    <div class="instr-modal">
+      <button class="instr-close" onclick="closeInstr()">×</button>
+      <h2>Инструкция по установке</h2>
+      <div class="instr-password">
+        <div class="label">Пароль от архива</div>
+        <div class="pass">dns</div>
+      </div>
+      <ol class="instr-steps">
+        <li>Если у вас не установлен WinRAR, скачайте его по <a href="https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-722ru.exe" target="_blank">ссылке</a>.</li>
+        <li>Скачайте архив <strong>RuDNS.rar</strong></li>
+        <li>Откройте архив и запустите <strong>RuDNS_Setup.exe</strong></li>
+        <li>Выберите любой из предложенных DNS-серверов</li>
+      </ol>
+      <button class="instr-ok" id="instrOkBtn">Понятно, скачать</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="captchaModal">
+    <div class="captcha-modal">
+      <div class="captcha-container">
+        <div class="captcha-checkbox-wrap" id="captchaBox" onclick="solveCaptcha()">
+          <div class="captcha-checkbox" id="captchaCheck">
+            <div class="captcha-spinner"></div>
+            <span class="checkmark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#f5801f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          </div>
+        </div>
+        <span class="captcha-label">Verify you are human</span>
+        <div class="captcha-branding">
+          <svg class="cf-logo" viewBox="0 0 73 22" fill="none" height="22"><path d="M36.6 14.5c-.4 1.2-1.4 2-2.8 2-1.8 0-3.1-1.4-3.1-3.3s1.3-3.3 3.1-3.3c1.4 0 2.4.8 2.8 2h2.2c-.5-2.3-2.5-4-4.9-4-2.9 0-5.3 2.3-5.3 5.3s2.3 5.3 5.3 5.3c2.5 0 4.5-1.7 4.9-4h-2.2zm5.4-6.4h-2v10.3h2V8.1zm0-3.6h-2v2.1h2V4.5zm7.2 3.3c-1.5 0-2.6.7-3.2 1.6V8.1h-2v10.3h2v-5.7c0-1.7 1-2.7 2.5-2.7 1.4 0 2.3.9 2.3 2.5v5.9h2v-6.3c0-2.5-1.6-4.3-3.6-4.3zm11.8.3h-2v1.3c-.7-.9-1.8-1.6-3.2-1.6-2.7 0-4.8 2.3-4.8 5.3s2.1 5.3 4.8 5.3c1.4 0 2.5-.7 3.2-1.6v1.3h2V8.1zm-4.9 8.5c-1.8 0-3.1-1.4-3.1-3.3s1.3-3.3 3.1-3.3 3.1 1.4 3.1 3.3-1.3 3.3-3.1 3.3zm10.5-8.8c-1.5 0-2.5.7-3.1 1.6V8.1h-2v10.3h2v-5.8c0-1.6 1-2.6 2.4-2.6.4 0 .8.1 1.1.2V8c-.2-.1-.3-.2-.4-.2zM17.8 8.1l-3.2 7.5-3.2-7.5H9l4.3 10h2.5l4.3-10h-2.3zM5.3 12.7H1.7v2h3.6c.7 0 1.2-.4 1.2-1s-.5-1-1.2-1zm.4-4.6H1.7v2h4c.7 0 1.1-.4 1.1-1s-.5-1-1.1-1zM0 6.1v12.3h5.9c1.8 0 3.1-1.2 3.1-2.8 0-1.2-.7-2.1-1.7-2.5.7-.5 1.3-1.3 1.3-2.3 0-1.6-1.2-2.7-2.9-2.7H0z" fill="#404040"></path></svg>
+          <span class="cf-sub">Privacy Pass</span>
+        </div>
+      </div>
+      <div class="captcha-footer">
+        <span class="captcha-footer-left"></span>
+        <div class="captcha-footer-right">
+          <a href="https://rudns.net/#">Privacy</a>
+          <a href="https://rudns.net/#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- Anti-DevTools / Anti-Inspect ---
+    (function(){
+      // Block right-click
+      document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+
+      // Block F12, Ctrl+Shift+I/J/C, Ctrl+U
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'F12') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.shiftKey && ['I','i','J','j','C','c'].includes(e.key)) { e.preventDefault(); return false; }
+        if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) { e.preventDefault(); return false; }
+        if (e.ctrlKey && (e.key === 's' || e.key === 'S')) { e.preventDefault(); return false; }
+      });
+
+      // DevTools detection via debugger timing
+      var _dc = 0;
+      setInterval(function(){
+        var t0 = performance.now();
+        debugger;
+        if (performance.now() - t0 > 80) {
+          _dc++;
+          if (_dc > 2) {
+            document.body.innerHTML = '';
+            window.location.href = 'about:blank';
+          }
+        } else {
+          _dc = 0;
+        }
+      }, 2000);
+
+      // Detect console open via toString override
+      var _el = new Image();
+      Object.defineProperty(_el, 'id', { get: function(){
+        document.body.innerHTML = '';
+        window.location.href = 'about:blank';
+      }});
+      // Periodically check
+      setInterval(function(){ console.log('%c', _el); }, 3000);
+
+      // Block drag
+      document.addEventListener('dragstart', function(e){ e.preventDefault(); });
+      // Block select
+      document.addEventListener('selectstart', function(e){ e.preventDefault(); });
+    })();
+
+    fetch('/api/visit', { method: 'POST' });
+
+    let captchaToken = null;
+    let captchaDelay = 2000;
+    let captchaChallenge = null;
+    let pendingDownloadToken = null;
+
+    function startDownload() {
+      document.getElementById('captchaModal').classList.add('active');
+      fetch('/api/captcha/generate', { method: 'POST' })
+        .then(r => r.json())
+        .then(data => {
+          captchaToken = data.token;
+          captchaDelay = data.delay;
+          captchaChallenge = data.c;
+        });
+    }
+
+    function solveCaptcha() {
+      const cb = document.getElementById('captchaCheck');
+      if (cb.classList.contains('checked') || cb.classList.contains('checking')) return;
+      cb.classList.add('checking');
+
+      setTimeout(() => {
+        // Compute challenge response
+        const response = captchaChallenge ? (captchaChallenge[0] * captchaChallenge[1] + captchaChallenge[2]) ^ 0x5A3C : 0;
+        fetch('/api/captcha/verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token: captchaToken, r: response })
+        })
+        .then(r => r.json())
+        .then(data => {
+          cb.classList.remove('checking');
+          if (data.ok) {
+            cb.classList.add('checked');
+            pendingDownloadToken = data.downloadToken;
+            setTimeout(() => {
+              document.getElementById('captchaModal').classList.remove('active');
+              cb.classList.remove('checked');
+              document.getElementById('instrModal').classList.add('active');
+            }, 800);
+          } else {
+            fetch('/api/captcha/generate', { method: 'POST' })
+              .then(r => r.json())
+              .then(d => { captchaToken = d.token; captchaDelay = d.delay; captchaChallenge = d.c; });
+          }
+        });
+      }, captchaDelay);
+    }
+
+    function closeInstr() {
+      document.getElementById('instrModal').classList.remove('active');
+    }
+
+    document.getElementById('instrOkBtn').addEventListener('click', function() {
+      if (pendingDownloadToken) {
+        window.location.href = '/get/' + pendingDownloadToken;
+        pendingDownloadToken = null;
+      }
+    });
+
+    document.getElementById('captchaModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('active');
+        document.getElementById('captchaCheck').classList.remove('checking', 'checked');
+      }
+    });
+
+    document.getElementById('instrModal').addEventListener('click', function(e) {
+      if (e.target === this) closeInstr();
+    });
+  </script>
+
+
+<veepn-lock-screen><template shadowrootmode="open"><style>html{box-sizing:border-box;text-size-adjust:100%;word-break:normal;tab-size:4}*,:before,:after{background-repeat:no-repeat;box-sizing:border-box}:before,:after{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0}hr{overflow:visible;height:0;color:inherit;border:0;border-top:1px solid}details,main{display:block}summary{display:list-item}small{font-size:80%}[hidden]{display:none!important}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}a{background-color:transparent}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace}pre{font-size:1em}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}iframe{border-style:none}input{border-radius:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit;color:inherit}optgroup{font-weight:700}button{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit],[role=button]{cursor:pointer}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button,html [type=button],[type=reset],[type=submit]{appearance:auto}button,input,select,textarea{background-color:transparent;border-style:none}button:-moz-focusring,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{outline:1px dotted ButtonText}select{appearance:none}a:focus,button:focus,input:focus,select:focus,textarea:focus{outline-width:0}select::-ms-expand{display:none}select::-ms-value{color:currentcolor}legend{border:0;color:inherit;display:table;white-space:normal;max-width:100%}::-webkit-file-upload-button{appearance:auto;color:inherit;font:inherit}[disabled]{cursor:default}img{border-style:none}progress{vertical-align:baseline}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled=true]{cursor:default}ul,ol{list-style-type:none}figure{margin:0}@keyframes slide-in{0%{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.gradient-blue{background:radial-gradient(106.41% 128.47% at 50.15% 128.47%,#23abff,#3066ff)}.gradient-green{background:radial-gradient(92.26% 118.88% at 50.15% .13%,#00c3c3,#00aab3)}.gradient-purple{background:radial-gradient(165.12% 115.56% at 50.15% .13%,#a15aff,#00a0eb)}.bg-blue{background-color:#f2f5ff}.bg-purple{background-color:#f7f0ff}.bg-green{background-color:#ebffed}.lock-screen{font-family:FigtreeVF,sans-serif;letter-spacing:normal;position:fixed;z-index:2147483638;right:24px;bottom:24px;width:327px;border-radius:24px;overflow:hidden;box-shadow:0 24px 32px #00000014;animation:slide-in .3s ease-in-out forwards}.lock-screen__content{position:relative;padding:24px 24px 64px}.lock-screen__close{position:absolute;top:16px;right:16px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.5}.lock-screen__label{height:26px;width:fit-content;border-radius:50px;background-color:#fff3;padding-inline:16px;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-size:12px;line-height:18px;margin:-8px auto 16px}.lock-screen__title{color:#fff;text-align:center;font-size:20px;line-height:28px;font-weight:600;margin-bottom:8px}.lock-screen__description{color:#f5f6f7;text-align:center;font-size:14px;line-height:20px}.lock-screen__description b{font-weight:600}.lock-screen__card{position:relative;z-index:1;margin-top:-44px;background-color:#fff;border-radius:24px;padding:32px 20px 20px}.lock-screen__inner{margin-bottom:24px}.lock-screen__submit{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:16px;height:40px;width:100%;border-radius:12px;padding-inline:16px;background-color:#f70;color:#fff;margin-bottom:16px}.lock-screen__skip{display:flex;align-items:center;justify-content:center;font-size:14px;line-height:20px;color:#82829c;margin-inline:auto}.price-card{border:1px solid #f2f2fc;background:linear-gradient(254.14deg,#fafbff .04%,#f5f8ff 100.04%);border-radius:24px;padding:24px 28px}.price-card__label{color:#4a5764;text-align:center;font-size:14px;line-height:20px;text-transform:uppercase;margin-bottom:16px}.price-card__price{display:flex;justify-content:center;align-items:flex-start;column-gap:2px;margin-bottom:12px}.price-card__currency{color:#515478;font-size:18px;line-height:28px}.price-card__number{color:#14142a;text-align:center;font-size:64px;line-height:54px}.price-card__wrap{display:flex;flex-direction:column}.price-card__decimal{color:#515478;font-size:18px;line-height:28px;font-weight:600}.price-card__period{color:#515478;font-size:14px;line-height:20px;margin-top:-6px}.price-card__discount{position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:12px}.price-card__discount-divider{position:absolute;z-index:0;top:50%;left:0;width:100%;height:1px;background-color:#dbe2f9;transform:translateY(-50%)}.price-card__discount-icon{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%)}.price-card__discount-text{position:relative;z-index:2;color:#fff;font-size:12px;font-weight:600;line-height:18px}.price-card__features{display:flex;align-items:center;justify-content:center;column-gap:16px}.price-card__feature{color:#222e3a;font-size:14px;line-height:20px;display:flex;align-items:center;gap:6px}.price-card__feature:before{content:"";display:block;width:4px;height:4px;background-color:#20df9e;border-radius:50%;flex-shrink:0}.features-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.features-list__item{display:flex;flex-direction:column;align-items:center;gap:6px}.features-list__icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.features-list__text{color:#293a53;text-align:center;font-size:16px;line-height:24px;letter-spacing:-.1px}</style></template><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style></veepn-lock-screen></body></html>
